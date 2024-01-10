@@ -1,0 +1,45 @@
+Prerequisites
+    Hypervisor & kubectl
+
+Hypervisor:
+--------------------------------
+# sudo apt-get install virtualbox
+ if any error, we will try to install virtual box.
+  
+# sudo dpkg -i <virtualbox-package-name.deb>
+# sudo apt-get install -f  # To install dependencies
+
+
+Install Minikube:
+------------------------------
+Download the Minikube binary:
+      curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+Install the Minikube binary:
+       sudo dpkg -i minikube_latest_amd64.deb
+--------
+Start Minikube Cluster:
+
+minikube start --driver=<hypervisor> 
+     hypervisor like docker or Virtualbox
+
+Docker :
+--------------------------------
+sudo apt update
+sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo usermod -aG docker $USER
+docker --version
+
+--------------------------
+kubectl:
+sudo snap install kubectl --classic
+
+
+kubectl get nodes
