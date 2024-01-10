@@ -1,0 +1,127 @@
+1.git status 
+  ==========
+
+  to check the status and all use this command .It will show the all changed files and directories
+  like 
+  a.modified files = changes are happen in the existing files
+  b.untraced files= new file 
+
+2.git add .
+  =========
+
+  this command is used for the to move the changed and untraced files into staging area
+
+  if you want to move specific file into the staging area use the below command
+     
+     git add filename
+     ================
+
+3.git commit -m "message you want to give here"
+  =============================================
+
+  this command is moved the staging files into the local repository
+
+4.git push origin branchName
+  ==========================
+
+  this command is used to push  all the local repository[your branch] files into the central repository[your branch]
+  you don't need to create a branch in the central repo automatically it will create after you push 
+
+5.git branch
+  ==========
+
+   to check the number of branches in your local repository
+
+6.git branch -a
+  =============
+
+  to check the branches in the remote repository
+
+7.git checkout existing-branchName
+  ================================
+
+  to switch the one branch to another branch
+
+8.git checkout -b new-branchName
+  ==============================
+
+   it will be create new branch and also switch branch at a single hit
+
+9.git push origin branchName
+  ==========================
+
+  to push the changes files into the central repository at the first times
+  and After second time on word use 
+   
+     git push
+     ========
+    
+10.git merge sourcebrancename
+   ==========================
+
+   to merge the one source branch into the destiny branch 
+
+11.git rebase sourcebrancename
+   ===========================
+
+   this command is also same as the merge but the difference is if we use the merge command 
+   the CID will be create instead of use the rebase The CID will not create
+
+12.git stash save "label Name"
+   ===========================
+
+   to save the temporary files and all and you can revert those stash files by using the POP
+   when you save the temporary files in the stash memory it will store in the index format 0-1-2-3 like
+   
+   stash@{0}
+   stash@{1}
+
+   it will store like this 
+
+   when ever you want to revert those temporary files into your workspace use the command
+
+   1. git stash pop  ----> first stash memory will be revert
+   2. git stash pop stash@{0}    -----> 0 index's stash memory will be revert
+
+13.git log
+   =======
+
+    it will show the commit id and all .its very useful to troubleshooting the error and all 
+
+    a.git log --oneline 
+      =================
+
+      it used to print all the CID's at single line only
+    
+    b.git log -n
+      ==========
+
+      it used to print the number of CID's by replacing the n into numbers [n=1 or 2 or etc..,]
+
+    c.git log --author=nameofAuthor
+      =============================
+
+      get the CID's based on the author name 
+    
+    d.git log --grep "commit Message"
+      ===============================
+
+      based on the commit message the CID's will print
+    
+    e.git log --file filename
+      =======================
+
+      based on the filename you give the CID's will print
+
+14.git pull --rebase
+   =================
+
+   update the local branch[any branch main or subbranch] up to date with central repository
+
+15.git cherry-pic CID
+   ==================
+       
+    git cherry-pick <CID1> <CID2> <CID3>
+    ====================================
+
+    if you want merge particular commit use the above command 
