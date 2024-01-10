@@ -1,0 +1,22 @@
+1.Install the required dependencies:
+   sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+2.Set up the Docker repository:
+   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+3.Install Docker:
+  sudo yum install -y docker-ce docker-ce-cli containerd.io
+
+4.Start the Docker service:
+  sudo systemctl start docker
+
+5.Enable Docker to start on boot:
+  sudo systemctl enable docker
+
+6.Verify that Docker is installed correctly:
+  sudo docker run hello-world
+
+
+  service  docker status
+  service  docker start
+  service  docker stop
