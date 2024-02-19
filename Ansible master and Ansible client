@@ -1,0 +1,18 @@
+Master:
+
+Step1: ssh-keygen (or ssh-keygen-t rsa)
+step4: ssh-copy-id ubuntu@10.1.1.100
+              0r 
+         ssh ubuntu@ip
+step5: ansible -i hosts-m ping all
+
+--------------
+Slave:
+
+step2: Sudo su -
+vi /etc/ssh/sshd_config
+passwordauthentication yes
+
+
+Step3: passwd ubuntu 
+service sshd restart
